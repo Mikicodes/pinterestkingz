@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class User(object):
 	"""Constructor of the """
 	def __init__(self, name, username, email, password):
@@ -82,7 +84,7 @@ class User(object):
 
 	#Reasign a registration_date to User
 	def set_registration_date(self,registration_date):
-		self.registration_date = registration_date
+		self.registration_date = datetime.now()
 
 	#Return registration_date of the User
 	def get_registration_date(self):
@@ -114,4 +116,3 @@ class User(object):
 
 	def create_board(self,board):
 		self.board.append(board)
-
