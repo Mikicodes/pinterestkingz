@@ -40,8 +40,8 @@ class Board:
         return self.collaborator
 
     def set_date_time(self, date, time):  # setting the date and time of creation of a board
-        self.date = date
-        self.time = time
+        self.date = datetime.datetime.now().date()
+        self.time = datetime.datetime.now().time()
 
     def get_date_time(self):  # returning the date and time of creation of the board
         return print('Created on {} at {}'.format(self.date, self.time))
