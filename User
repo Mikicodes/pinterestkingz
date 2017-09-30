@@ -1,21 +1,21 @@
 from datetime import datetime
 
 class User(object):
-	"""Constructor of the """
-	def __init__(self, name, username, email, password):
-		self.name = name
-		self.username = username
-		self.password = password
-		self.email=email
-		self.interest = interest
-		self.country = country
-		self.comment = comment
-		self.current_location = current_location
-		self.about_info = about_info
-		self.registration_date = registration_date
+	"""Constructor of the user"""
+	def __init__(self):
+		# self.name = name
+		# self.username = username
+		# self.password = password
+		# self.email=email
+		# self.interest = interest
+		# self.country = country
+		# self.comment = comment
+		# self.current_location = current_location
+		# self.about_info = about_info
+		# self.registration_date = registration_date
 		self.followers = []
 		self.following = []
-		self.profile_picture = profile_picture
+		# self.profile_picture = profile_picture
 		self.boards = []
 
 	#Ressign a name to the User
@@ -91,7 +91,7 @@ class User(object):
 		return self.registration_date
 
 	#Reasign a followers to User
-	def set_followers(self,follower):
+	def set_followers(self,follwer):
 		self.followers.append(follower)
 
 	#Return followers of the User
