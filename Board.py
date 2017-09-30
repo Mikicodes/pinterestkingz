@@ -1,4 +1,4 @@
-
+import datetime
 
 class Board:
     def __init__(self, name, pins):  # initializing the class, these are the attributes to appear at initialization
