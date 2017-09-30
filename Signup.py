@@ -1,25 +1,26 @@
 """
 This is a module for signup
 """
+from User import User
 
-class Signup:
-    """
-    This class requires the user to enter the name, password, email
-    """
+USER_LIST = []
 
-    # This is a list of users that sign up on the app
+new_name = input("Name: ")
+new_username = input("Username: ")
+new_email = input("Email: ")
+new_password = input("Password: ")
 
-    USER_LIST = []
 
-    def __init__(self, username, password, email):
-        self.username = username
-        self.password = password
-        self.email = email
+def create_user():
 
-    def create_user(self):
-        temp_user = User()
-        temp_user.set_username("kelvin")
-        temp_user
-        # for user in USER_LIST:
-        #      if self.name != user:
-        #          USER_LIST.append()
+    user = User(new_name, new_username, new_email, new_password)
+    user.set_username(new_name)
+
+    for man in USER_LIST:
+         if self.name != user:
+             USER_LIST.append(user)
+         else:
+             print("Enter real names")
+
+create_user()
+print(USER_LIST)
