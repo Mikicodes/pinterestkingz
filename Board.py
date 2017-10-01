@@ -1,13 +1,13 @@
 import datetime
 
 class Board:
-    def __init__(self, name, pins):  # initializing the class, these are the attributes to appear at initialization
-        self.name = name
-        self.pins = list(pins)
-        self.category = category
-        self.description = description
-        self.date = date
-        self.time = time
+    def __init__(self):  # initializing the class, these are the attributes to appear at initialization
+#         self.name = name
+        self.pins = list()
+#         self.category = category
+#         self.description = description
+#         self.date = date
+#         self.time = time
 
     def set_name(self, name):  # setting the name of the board
         self.name = name
