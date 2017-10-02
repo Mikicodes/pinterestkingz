@@ -3,16 +3,6 @@ from datetime import datetime
 class User(object):
 	"""Constructor of the user"""
 	def __init__(self):
-		# self.name = name
-		# self.username = username
-		# self.password = password
-		# self.email=email
-		# self.interest = interest
-		# self.country = country
-		# self.comment = comment
-		# self.current_location = current_location
-		# self.about_info = about_info
-		# self.registration_date = registration_date
 		self.followers = []
 		self.following = []
 		# self.profile_picture = profile_picture
@@ -91,7 +81,7 @@ class User(object):
 		return self.registration_date
 
 	#Reasign a followers to User
-	def set_followers(self,follwer):
+	def set_followers(self,follower):
 		self.followers.append(follower)
 
 	#Return followers of the User
@@ -114,5 +104,6 @@ class User(object):
 	def get_profile_pic(self):
 		return self.profile_pic
 
-	def create_board(self,board):
+	def create_board(self, board):
 		self.board.append(board)
+
