@@ -1,10 +1,6 @@
 class Pin:
-	#Construct a pin
-	def __init__(self, picture, name):
-		self.name = name
-		self.picture = picture
-		self.description
-		self.posting_date
+	#Construct a Pin for use
+	def __init__(self):
 		self.comments = []
 
 	#Reassign Name of Pin
@@ -32,7 +28,7 @@ class Pin:
 		self.posting_date = posting_date
 
 	#Return date and time of posting of the pin
-	def get_posting_date(self):
+	def get_posting_date(selfs):
 		return posting_date
 
 	#Add a comment to a pin
@@ -42,4 +38,3 @@ class Pin:
 	#Return comments of the pin
 	def get_comments(self):
 		return self.comments
-
