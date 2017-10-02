@@ -1,6 +1,15 @@
 class Pin:
+<<<<<<< HEAD
 	#Construct a Pin for use
 	def __init__(self):
+=======
+	#Construct a pin
+	def __init__(self):
+# 		self.name = name
+# 		self.picture = picture
+		self.description
+		self.posting_date
+>>>>>>> eced91dbde459f139206221edbb8319ae7a4a5b7
 		self.comments = []
 
 	#Reassign Name of Pin
