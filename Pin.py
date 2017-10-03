@@ -17,7 +17,7 @@ class Pin:
         return self.name
 
     #Reassign Description of the pin
-    def set_description(self, descriptione):
+    def set_description(self, description):
         self.description =description
 
     #Get the description of the pin
