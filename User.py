@@ -1,4 +1,6 @@
 from datetime import datetime
+from Board import Board
+from Pin import Pin
 
 class User(object):
     """Constructor of the user"""
@@ -104,6 +106,38 @@ class User(object):
     def get_profile_pic(self):
         return self.profile_pic
 
-    def create_board(self, board):
-        self.board.append(board)
+    def create_board(self):
+        board = Board()
+        board.set_name(input("Enter Board Name:"))
+        board.set_category(input("Enter Board Category:"))
+        board.set_description(input("Enter Board Description:"))
+        self.boards.append(board)
+
+
+
+    def create_pin(self):
+        pin = Pin()
+        pin.set_name(input("Enter pin name:"))
+        pin.set_description(input("Enter pin description:"))
+        pin.set_picture(input("Enter picture:"))
+        board_c_status = input("To add to Existing board, enter 1:")
+
+        if board_c_status:
+            board_add = input("Enter the name of existing Board:")
+            for board in self.boards:
+                if board.get_name() == board_add:
+                    board.pins.append(pin)
+                else:
+                    print("Board does not exist")
+        else:
+            board = Board()
+            board.set_name(input("Enter Board Name:"))
+            board.set_category(input("Enter Board Category:"))
+            board.set_description(input("Enter Board Description:"))
+            board.pins.append(pin)
+
+
+
+
+
 
