@@ -53,8 +53,3 @@ def signin():
             print('Welcome ', ask_name.capitalize())
         else:
             print('Sorry your password and username don\'t match')
-
-
-
-signin()
-
