@@ -1,4 +1,5 @@
 import datetime
+from Pin import Pin
 
 
 class Board:
@@ -15,9 +16,9 @@ class Board:
         # returning the set name of the board
         return self.name
 
-    def set_pins(self, pins):
+    def set_pins(self, pin):
         # creating a list of pins to appear in the board
-        self.pins = list(pins)
+        self.pins = list(pin)
 
     def get_pins(self):
         # returning the list of pins
