@@ -118,3 +118,6 @@ class User(object):
 		self.board.append(board)
 
 
+sim = User()
+sim.edit_details()
+
