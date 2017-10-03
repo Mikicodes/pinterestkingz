@@ -4,49 +4,58 @@ import csv
 
 from User import User
 
-"""
 
-USER_LIST = []
-
-new_name = input("Name: ")
-new_username = input("Username: ")
-new_email = input("Email: ")
-new_password = input("Password: ")
+user_list = []
 
 
-def create_user():
+def signup():
 
-    user = User(new_name, new_username, new_email, new_password)
-    user.set_username(new_name)
+    user = User()
+    new_name = input("Name: ")
+    new_username = input("Username: ")
+    new_email = input("Email: ")
+    new_password = input("Password: ")
+    user.set_name(new_name)
+    user.set_username(new_username)
+    user.set_email(new_email)
+    user.set_password(new_password)
+    user_list.append(user)
 
-    for man in USER_LIST:
-         if self.name != user:
-             USER_LIST.append(user)
-         else:
-             print("Enter real names")
+    file_exist = os.path.isfile('user.csv')
+    with open('user.csv', 'a') as csv_file:
+        fieldnames = ['username','password']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
-create_user()
-print(USER_LIST)
-"""
-
-
-class Users:
-
-    def __init__(self, users = []):
-        self.users = users
+        if not file_exist:
+            writer.writeheader()
+        writer.writerow({'username': user.get_name(), 'password': user.get_password()})
 
 
-    def user_list(self, user):
-        self.users.append(user)
+def signin():
+    """
+    this asks for two parameters to check users in the csv file
 
-    def create_csv(self, user):
+    """
+    ask_name = input("Your username? ")
+    ask_password = input("Password: ")
 
-        file_exist = os.path.isfile('user.csv')
-        with open('user.csv', 'a') as csv_file:
-            fieldnames = ['firstname', 'lastname', 'email', 'password', 'birthday', 'gender']
-            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    with open("user.csv", 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
 
-            if not file_exist:
-                writer.writeheader()
-            writer.writerow(
-                {'firstname': user.firstname, 'lastname': user.lastname, 'email': user.email, 'password': user.password, 'birthday': user.birthday, 'gender': user.gender})
+        # this checks and loops thru the reader dictionary
+        user_match = False
+        for read in reader:
+            if ask_name == read['username'] and ask_password == read['password']:
+                user_match = True
+
+        # this prints the output if the user is found
+        if user_match:
+            print('Welcome ', ask_name.capitalize())
+        else:
+            print('Sorry your password and username don\'t match')
+
+
+
+# signup()
+signin()
+
