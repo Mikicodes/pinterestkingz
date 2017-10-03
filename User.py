@@ -137,4 +137,3 @@ class User(object):
             board.set_description(input("Enter Board Description:"))
             board.pins.append(pin)
 
-
