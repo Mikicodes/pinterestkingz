@@ -106,6 +106,7 @@ class User(object):
     def get_profile_pic(self):
         return self.profile_pic
 
+    #Create a Board for the specific User
     def create_board(self):
         board = Board()
         board.set_name(input("Enter Board Name:"))
@@ -113,8 +114,7 @@ class User(object):
         board.set_description(input("Enter Board Description:"))
         self.boards.append(board)
 
-
-
+    #Create a pin and place it in a Board
     def create_pin(self):
         pin = Pin()
         pin.set_name(input("Enter pin name:"))
