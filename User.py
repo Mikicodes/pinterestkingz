@@ -11,7 +11,7 @@ class User(object):
         self.boards = []
 
     #Ressign a name to the User
-    def set_name(self,name):
+    def set_name(self, name):
         self.name = name
 
     #Return name of the User
@@ -135,9 +135,3 @@ class User(object):
             board.set_category(input("Enter Board Category:"))
             board.set_description(input("Enter Board Description:"))
             board.pins.append(pin)
-
-
-
-
-
-
