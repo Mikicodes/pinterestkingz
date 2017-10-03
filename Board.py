@@ -10,7 +10,7 @@ class Board:
     def set_name(self, name):
         # setting the name of the board
         self.name = name
-
+        
     def get_name(self):
         # returning the set name of the board
         return self.name
