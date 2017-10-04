@@ -16,9 +16,9 @@ class Board:
         # returning the set name of the board
         return self.name
 
-    def set_pins(self, pin):
+    def add_pins(self, pin):
         # creating a list of pins to appear in the board
-        self.pins = list(pin)
+        self.pins.append(pin)
 
     def get_pins(self):
         # returning the list of pins
