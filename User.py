@@ -10,6 +10,7 @@ class User(object):
         # self.profile_picture = profile_picture
         self.boards = []
         self.signin_state = False
+        self.interest_list = []
     #Ressign a name to the User
     def set_name(self,name):
         self.name = name
@@ -44,11 +45,11 @@ class User(object):
 
     #Reasign an interest to User
     def set_interest(self,interest):
-        self.interest = interest
+        self.interest_list.append(interest)
 
     #Return interest of the User
     def get_interest(self):
-        return self.interest
+        return self.interest_list
 
     #Reasign a country to User
     def set_country(self,country):
