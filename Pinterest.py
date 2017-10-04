@@ -12,6 +12,9 @@ class Pinterest:
     # def __init__(self):
     user_list = []
     user_match = -1
+    
+    def __init__(self):
+        self.present_user = User()
 
     @staticmethod
     def signup():
@@ -84,27 +87,31 @@ class Pinterest:
 
         run = True
         while run == True:
-            choice = input("What do you want to do?\n1 Sign in\n2 Sign up\n3 Exit")
+            choice = input("What do you want to do?\n1 Sign in\n2 Sign up\n3 Exit\n\n")
 
             if choice == "1":
                 Pinterest.signin()
                 while Pinterest.user_match == True:
-                    activities = int(input("Create pin or board? \n1 - Pin \n2 - Board"))
+                    activities = int(input("Create pin or board? \n1 - Pin \n2 - Board\n3 - User Profile\n\n"))
 
                     if activities == 1:
-                        present_user.create_pin()
+                        self.present_user.create_pin()
                     
                     elif activities == 2:
                         # user create boards
-                        present_user.create_board()
+                        self.present_user.create_board()
+
+                    elif activities==3:
+                        self.present_user.get_name()
+
                     else:
                         print("Have a good day!")
 
 
-            if choice == "2":
+            elif choice == "2":
                 Pinterest.signup()
 
-            if choice == "3":
+            elif choice == "3":
                 print("Goodbye!")
                 run = False
 
