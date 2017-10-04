@@ -9,7 +9,7 @@ class User(object):
         self.following = []
         # self.profile_picture = profile_picture
         self.boards = []
-        self.signin_status = False
+        self.signin_state = False
     #Ressign a name to the User
     def set_name(self,name):
         self.name = name
