@@ -49,3 +49,4 @@ class Pin:
     #Return comments of the pin
     def get_comments(self):
         return self.comments
+

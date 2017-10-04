@@ -143,7 +143,3 @@ class User(object):
         else:
             print("Wrong option")
 
-user = User()
-user.create_board()
-user.create_pin()
-

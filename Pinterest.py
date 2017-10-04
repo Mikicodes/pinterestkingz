@@ -1,7 +1,6 @@
 from User import User
 from Pin import Pin
 from Board import Board
-#from Signup import Signup
 from datetime import datetime
 import os.path
 import csv
@@ -55,6 +54,11 @@ class Pinterest:
                 if ask_name == read['username'] and ask_password == read['password']:
                     user_match = True
 
+                    #setting the user to be operated on as soon as signin is complete
+                    for user in user_list:
+                        if user.get_name() == ask_name:
+                            present_user = user
+
             # this prints the output if the user is found
             if user_match:
                 print('Welcome ', ask_name.capitalize())
@@ -63,28 +67,17 @@ class Pinterest:
             else:
                 print('Sorry your password and username don\'t match')
 
-        # this is to add activities to create pins or board
-
-        # activities = int(input("Create pin or board? \n1 - Pin \n 2 - Board"))
-
-        # if activities == 1:
-        #     pin_description = input("Pin description: ")
-        #     pin_title = input("Pin Title: ")
-
-        #     new_user = User()
-            
-        # elif activities == 2:
-        #     # user create boards
-        #     pass
-        # else:
-        #     print("Have a good day!")
 
 
+    #View the Homepage
     def homepage(self):
+        #
     	for user in USER_LIST:
     		for board in user.boards:
     			return board.pins
     
+
+    #Loop the things
     def call(self):
 
         run = True
@@ -97,8 +90,7 @@ class Pinterest:
                 activities = int(input("Create pin or board? \n1 - Pin \n2 - Board"))
 
                 if activities == 1:
-                    new_user = User()
-                    new_user.create_pin()
+                    present_user.create_pin()
                 
                 elif activities == 2:
                     # user create boards
