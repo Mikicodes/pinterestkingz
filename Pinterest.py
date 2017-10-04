@@ -9,8 +9,9 @@ import csv
 
 class Pinterest:
 
-    def __init__(self):
-        self.user_list = []
+    # def __init__(self):
+    user_list = []
+    user_match = -1
 
     @staticmethod
     def signup():
@@ -24,7 +25,8 @@ class Pinterest:
         user.set_username(new_username)
         user.set_email(new_email)
         user.set_password(new_password)
-        user_list.append(user)
+        Pinterest.user_list.append(user)
+        print("You have Signed Up")
 
         file_exist = os.path.isfile('user.csv')
         with open('user.csv', 'a') as csv_file:
@@ -49,18 +51,18 @@ class Pinterest:
             reader = csv.DictReader(csvfile)
 
             # this checks and loops thru the reader dictionary
-            user_match = False
+            Pinterest.user_match = False
             for read in reader:
                 if ask_name == read['username'] and ask_password == read['password']:
-                    user_match = True
+                    Pinterest.user_match = True
 
                     #setting the user to be operated on as soon as signin is complete
-                    for user in user_list:
+                    for user in Pinterest.user_list:
                         if user.get_name() == ask_name:
                             present_user = user
 
             # this prints the output if the user is found
-            if user_match:
+            if Pinterest.user_match:
                 print('Welcome ', ask_name.capitalize())
 
 
@@ -82,21 +84,21 @@ class Pinterest:
 
         run = True
         while run == True:
-
             choice = input("What do you want to do?\n1 Sign in\n2 Sign up\n3 Exit")
 
             if choice == "1":
                 Pinterest.signin()
-                activities = int(input("Create pin or board? \n1 - Pin \n2 - Board"))
+                while Pinterest.user_match == True:
+                    activities = int(input("Create pin or board? \n1 - Pin \n2 - Board"))
 
-                if activities == 1:
-                    present_user.create_pin()
-                
-                elif activities == 2:
-                    # user create boards
-                    pass
-                else:
-                    print("Have a good day!")
+                    if activities == 1:
+                        present_user.create_pin()
+                    
+                    elif activities == 2:
+                        # user create boards
+                        present_user.create_board()
+                    else:
+                        print("Have a good day!")
 
 
             if choice == "2":
