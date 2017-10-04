@@ -9,7 +9,7 @@ class User(object):
         self.following = []
         # self.profile_picture = profile_picture
         self.boards = []
-
+        self.signin_status = False
     #Ressign a name to the User
     def set_name(self,name):
         self.name = name
@@ -127,6 +127,7 @@ class User(object):
             for board in self.boards:
                 if board.get_name() == board_add:
                     board.pins.append(pin)
+                    print("Board added")
                 else:
                     print("Board does not exist")
         else:
@@ -135,9 +136,5 @@ class User(object):
             board.set_category(input("Enter Board Category:"))
             board.set_description(input("Enter Board Description:"))
             board.pins.append(pin)
-
-
-
-
 
 

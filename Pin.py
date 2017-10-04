@@ -1,11 +1,13 @@
+
+
 class Pin:
 
     #Construct a pin
     def __init__(self):
         #self.name = name
         #self.picture = picture
-        self.description
-        self.posting_date
+        # self.description
+        # self.posting_date
         self.comments = []
 
     #Reassign Name of Pin
@@ -21,8 +23,12 @@ class Pin:
         self.description =description
 
     #Get the description of the pin
-    def get_decription(self):
+    def get_description(self):
         return self.description
+
+    #Set the picture of the pin
+    def set_picture(self, picture):
+        self.picture = picture
 
     #Get the picture of the pin
     def get_picture(self):
