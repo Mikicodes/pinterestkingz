@@ -1,3 +1,5 @@
+
+
 class Pin:
 
     #Construct a pin
@@ -23,6 +25,10 @@ class Pin:
     #Get the description of the pin
     def get_decription(self):
         return self.description
+
+    #Set the picture of the pin
+    def set_picture(self, picture):
+        self.picture = picture
 
     #Get the picture of the pin
     def get_picture(self):
