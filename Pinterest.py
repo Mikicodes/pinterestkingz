@@ -11,7 +11,7 @@ class Pinterest:
 
     # def __init__(self):
     user_list = []
-    user_match = -1
+    user_match = False
     
     def __init__(self):
         self.present_user = User()
@@ -28,6 +28,7 @@ class Pinterest:
         user.set_username(new_username)
         user.set_email(new_email)
         user.set_password(new_password)
+        print(user.__dict__)
         Pinterest.user_list.append(user)
         print("You have Signed Up")
 
@@ -76,10 +77,8 @@ class Pinterest:
 
     #View the Homepage
     def homepage(self):
-        #
-    	for user in USER_LIST:
-    		for board in user.boards:
-    			return board.pins
+        print(self.present_user.__dict__)
+        print(self.present_user.boards[0].__dict__)
     
 
     #Loop the things
@@ -92,17 +91,19 @@ class Pinterest:
             if choice == "1":
                 Pinterest.signin()
                 while Pinterest.user_match == True:
-                    activities = int(input("Create pin or board? \n1 - Pin \n2 - Board\n3 - User Profile\n\n"))
+                    activities = int(input("Create pin or board? \n1 - Pin \n2 - Board\n3 - Home\n\n"))
 
                     if activities == 1:
                         self.present_user.create_pin()
+                        print(self.present_user.boards[0])
                     
                     elif activities == 2:
                         # user create boards
                         self.present_user.create_board()
+                        print(self.present_user.boards[0])
 
                     elif activities==3:
-                        self.present_user.get_name()
+                        self.homepage()
 
                     else:
                         print("Have a good day!")
@@ -111,7 +112,7 @@ class Pinterest:
             elif choice == "2":
                 Pinterest.signup()
 
-            elif choice == "3":
+            else:
                 print("Goodbye!")
                 run = False
 

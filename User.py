@@ -114,21 +114,27 @@ class User(object):
         board.set_category(input("Enter Board Category:"))
         board.set_description(input("Enter Board Description:"))
         self.boards.append(board)
+        print(self.boards[0].__dict__)
 
     #Create a pin and place it in a Board
     def create_pin(self):
-        pin = Pin()
-        pin.set_name(input("Enter pin name:"))
-        pin.set_description(input("Enter pin description:"))
-        pin.set_picture(input("Enter picture:"))
+        name = input("Enter pin name:")
+        description=input("Enter pin description:")
+        picture=input("Enter picture:")
         board_c_status = input("To add to Existing board, enter 1 ; 2 to create board:")
 
         if int(board_c_status) == 1:
+            print(self.boards[0].__dict__)
             board_add = input("Enter the name of existing Board:")
             for board in self.boards:
-                if board.get_name() == board_add:
-                    board.add_pins(pin)
-                    print("Pin added to Board {}".format(board.get_name()))
+                print('borands dkdkdk',board)
+                if board.name == board_add:
+                    print(board.__dict__)
+                    print(type(board))
+                    print(board.pins)
+                    board.pins.append(Pin(picture,description,name))
+                    print(board.__dict__)
+                    print("Pin added to Board {}".format(board.name))
                 else:
                     print("Board does not exist")
 

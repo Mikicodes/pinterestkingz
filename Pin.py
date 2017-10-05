@@ -3,13 +3,14 @@
 class Pin:
 
     #Construct a pin
-    def __init__(self):
-        #self.name = name
-        #self.picture = picture
-        # self.description
-        # self.posting_date
+    def __init__(self,picture,description, name):
+        self.name = name
+        self.picture = picture
+        self.description = description
         self.comments = []
 
+    # def __repr__(self):
+    #     print("{}".format(self.name))
     #Reassign Name of Pin
     def set_name(self,name):
         self.name =name

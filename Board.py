@@ -4,9 +4,9 @@ from Pin import Pin
 
 class Board:
 
-    def __init__(self):
+    def __init__(self,pins=[]):
         # initializing the class, these are the attributes to appear at initialization
-        self.pins = list()
+        self.pins = pins
 
     def set_name(self, name):
         # setting the name of the board
