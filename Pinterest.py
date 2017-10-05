@@ -76,8 +76,7 @@ class Pinterest:
 
     #View the Homepage
     def homepage(self):
-        #
-    	for user in USER_LIST:
+    	for user in user_list:
     		for board in user.boards:
     			return board.pins
     
